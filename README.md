@@ -8,8 +8,6 @@ This project features a simple quiz application built with JavaScript. Users can
 Quiz Data
 The quiz questions and answers are stored in the quizData array. Each object in the array represents a question with multiple-choice answers and the correct answer.
 
-javascript
-Skopiuj kod
 const quizData = [
     {
         question: 'Which renowned Japanese video game designer is often called the "father of survival horror" and is best known for his work on the Resident Evil series?',
@@ -24,8 +22,7 @@ const quizData = [
 DOM Elements
 The code retrieves necessary HTML elements by their IDs and classes to display questions, answer options, and handle user interactions.
 
-javascript
-Skopiuj kod
+
 const quizEls = document.getElementById("quiz");
 const answerEls = document.querySelectorAll(".answer");
 const questionEl = document.getElementById('question');
@@ -37,8 +34,7 @@ const submitBtn = document.getElementById('submit');
 Load Quiz
 The loadQuiz function updates the quiz UI with the current question and answer choices. It also calls deselect to uncheck any previously selected answers.
 
-javascript
-Skopiuj kod
+
 function loadQuiz() {
     deselect();
     const currentQuizData = quizData[currentQuiz];
@@ -65,8 +61,6 @@ function getSelected() {
 Deselect Answers
 The deselect function unchecks all radio buttons to prepare for the next question.
 
-javascript
-Skopiuj kod
 function deselect() {
     answerEls.forEach((answerEl) => {
         answerEl.checked = false;
@@ -75,8 +69,7 @@ function deselect() {
 Submit Button Event
 When the user clicks the "Submit" button, the selected answer is checked against the correct answer for the current question. If correct, the score is incremented. The quiz moves to the next question, or, if it’s the last question, it displays the final score and a reload button.
 
-javascript
-Skopiuj kod
+
 submitBtn.addEventListener("click", () => {
     const answer = getSelected();
     console.log(answer);
